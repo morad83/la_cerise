@@ -1,0 +1,35 @@
+.container {
+
+}
+
+header {
+
+}
+
+nav {
+
+}
+
+main {
+
+}
+
+#indexBien {
+    background-color: white;
+}
+
+#indexService {
+    background-color: blue;
+}
+
+#indexMedia {
+    background-color: red;
+}
+
+
+
+/*normalisation*/
+a {
+    color: initial;
+    text-decoration: initial;
+}

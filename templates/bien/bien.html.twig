@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block bienIndex %}
+<section class="bienIndex">
+    {% for bien in biens %}
+        {{ include('') }}
+    {% endfor %}
+</section>
+{% endblock %}
