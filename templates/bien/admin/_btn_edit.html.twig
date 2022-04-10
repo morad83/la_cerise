@@ -1,0 +1,6 @@
+<button>
+    <a href="{{ path('app_admin_bien_edit', {'id': bien.id}) }}"
+        data-token="{{ csrf_token('edit' ~ bien.id )}}">
+        Modifier
+    </a>
+</button>

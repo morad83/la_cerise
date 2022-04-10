@@ -1,0 +1,44 @@
+{% extends 'bases/bien_base.html.twig' %}
+
+{% block title %}Admin Bien{% endblock %}
+
+{% block bienBlock %}
+    <h1>Bien</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ bien.id }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ bien.nom }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ bien.description }}</td>
+        </tr>
+        <tr>
+            <th>Prix</th>
+            <td>{{ bien.prix }}</td>
+        </tr>
+        <tr>
+            <th>DateCommande</th>
+            <td>{{ bien.dateCommande ? bien.dateCommande.format('%y year(s), %m month(s), %d day(s)') : '' }}</td>
+        </tr>
+        <tr>
+            <th>DateLivraison</th>
+            <td>{{ bien.dateLivraison ? bien.dateLivraison.format('%y year(s), %m month(s), %d day(s)') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Actif</th>
+            <td>{{ bien.actif ? 'Yes' : 'No' }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+{{include('admin/bien/_btn_index.html.twig')}}
+{{include('admin/bien/_btn_edit.html.twig')}}
+{{include('admin/bien/_btn_supprimer.html.twig') }}
+{% endblock %}

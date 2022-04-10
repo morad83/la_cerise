@@ -1,0 +1,10 @@
+<button>
+    <a {% if 'admin' in {{ app.request.attributes.get('_route') }} %}
+        href="{{ path('app_admin_bien_show', {'id': bien.id}) }}"
+        {% else %}
+        href="{{ path('app_bien_show', {'id': bien.id}) }}"
+        {% endif %}
+    >
+        Voir plus.
+    </a>
+</button>
