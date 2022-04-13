@@ -1,17 +1,29 @@
+/* #FCF9FF whitePurple */
+
 .container {
 
 }
 
 header {
+    padding: 1rem;
+    background-color: black;
+}
 
+header h1 {
+    font-size: 6rem;
+    color: purple;
 }
 
 nav {
 
 }
 
-main {
+nav a {
+    font-size: 2rem;
+}
 
+main {
+    padding: 2rem 6rem;
 }
 
 #indexResume{
@@ -21,6 +33,19 @@ main {
 #indexNav{
 
 }
+
+#indexNav > section {
+    margin: 1rem 0;
+    padding: 1rem;
+}
+
+#indexNav > section > div:nth-child(1) {
+}
+
+#indexNav > section > div:nth-child(2), #indexNav > section > button {
+    margin: 1rem 0 0 1rem;
+}
+
 
 #indexBien {
     background-color: white;

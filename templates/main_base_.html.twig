@@ -15,11 +15,11 @@
         {% endblock %}
     </head>
     <body>
-        <div class="container">
-            {% include "main_base_includes" %}
-            {% include "main_base_includes" %}
+        <div class="container-fluid">
+            {% include "main_base_includes/head.html.twig" %}
+            {% include "main_base_includes/nav.html.twig" %}
             {% block body %}{% endblock %}
-            {% include "main_base_includes" %}
+            {% include "main_base_includes/foot.html.twig" %}
         </div>
     </body>
 </html>
