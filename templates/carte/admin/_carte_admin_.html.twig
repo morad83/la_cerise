@@ -1,0 +1,12 @@
+{{ include('carte/_carte.html.twig') }}
+<section class="carte">
+    <div>
+        <h1>{{ carte.dateCommande ? carte.dateCommande.format('%y year(s), %m month(s), %d day(s)') : '' }}</h1>
+    </div>
+    <div>
+        <span>{{ carte.dateLivraison ? carte.dateLivraison.format('%y year(s), %m month(s), %d day(s)') : '' }}</span>
+    </div>
+    <div>
+        <span>{{ carte.actif ? 'Yes' : 'No' }}</span>
+    </div>
+</section>

@@ -16,9 +16,8 @@ class Image
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $name;
 
-    #[ORM\ManyToOne(targetEntity: Bien::class, inversedBy: 'image')]
-    #[ORM\JoinColumn(nullable: false)]
-    private $bien;
+    #[ORM\OneToOne(mappedBy: 'image', targetEntity: Produit::class, cascade: ['persist', 'remove'])]
+    private $produit;
 
     public function getId(): ?int
     {
@@ -37,14 +36,24 @@ class Image
         return $this;
     }
 
-    public function getBien(): ?Bien
+    public function getProduit(): ?Produit
     {
-        return $this->bien;
+        return $this->produit;
     }
 
-    public function setBien(?Bien $bien): self
+    public function setProduit(?Produit $produit): self
     {
-        $this->bien = $bien;
+        // unset the owning side of the relation if necessary
+        if ($produit === null && $this->produit !== null) {
+            $this->produit->setImage(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($produit !== null && $produit->getImage() !== $this) {
+            $produit->setImage($this);
+        }
+
+        $this->produit = $produit;
 
         return $this;
     }

@@ -1,0 +1,7 @@
+<button>
+    <a href="{{ path('app_admin_carte_supprimer', {'id': carte.id}) }}"
+        onclick="return confirm('Confirmation?');"
+        data-token="{{ csrf_token('supprimer' ~ carte.id )}}">
+        Supprimer
+    </a>
+</button>

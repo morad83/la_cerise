@@ -2,29 +2,26 @@
 
 namespace App\Form;
 
-use App\Entity\Bien;
+use App\Entity\Carte;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class BienType extends AbstractType
+class CarteType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('nom')
             ->add('description')
-            ->add('prix')
-            ->add('dateCommande')
-            ->add('dateLivraison')
-            ->add('actif')
+            ->add('resume')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Bien::class,
+            'data_class' => Carte::class,
         ]);
     }
 }

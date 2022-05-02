@@ -1,0 +1,9 @@
+{% extends 'bases/carte_base.html.twig' %}
+
+{% block title %}Edit carte{% endblock %}
+
+{% block carteBlock %}
+{{ form(form) }}
+{{ include('admin/carte/_btn_index.html.twig')}}
+{{ include('admin/carte/_btn_supprimer.html.twig') }}
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'bases/carte_base.html.twig' %}
+
+{% block title %}carte index{% endblock %}
+
+{% block carteBlock %}
+    <h1>carte index</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Date Commande</th>
+            <th>Date Livraison</th>
+            <th>Actif</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for carte in cartes %}
+            <tr>
+                <td>{{ carte.id }}</td>
+                <td>{{ carte.nom }}</td>
+                <td>{{ carte.description }}</td>
+                <td>{{ carte.prix }}</td>
+                <td>{{ carte.dateCommande ? carte.dateCommande.format('%y year(s), %m month(s), %d day(s)') : '' }}</td>
+                <td>{{ carte.dateLivraison ? carte.dateLivraison.format('%y year(s), %m month(s), %d day(s)') : '' }}</td>
+                <td>{{ carte.actif ? 'Yes' : 'No' }}</td>
+                <td>
+                    {{ include('_btn_show.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

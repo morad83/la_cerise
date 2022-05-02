@@ -1,0 +1,8 @@
+{% extends 'bases/carte_base.html.twig' %}
+
+{% block title %}New carte{% endblock %}
+
+{% block carteBlock %}
+    {{ form(form) }}
+    {{ include('admin/carte/_btn_index.html.twig')}}
+{% endblock %}

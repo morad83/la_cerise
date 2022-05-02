@@ -1,0 +1,44 @@
+{% extends 'bases/carte_base.html.twig' %}
+
+{% block title %}Admin carte{% endblock %}
+
+{% block carteBlock %}
+    <h1>carte</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ carte.id }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ carte.nom }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ carte.description }}</td>
+        </tr>
+        <tr>
+            <th>Prix</th>
+            <td>{{ carte.prix }}</td>
+        </tr>
+        <tr>
+            <th>DateCommande</th>
+            <td>{{ carte.dateCommande ? carte.dateCommande.format('%y year(s), %m month(s), %d day(s)') : '' }}</td>
+        </tr>
+        <tr>
+            <th>DateLivraison</th>
+            <td>{{ carte.dateLivraison ? carte.dateLivraison.format('%y year(s), %m month(s), %d day(s)') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Actif</th>
+            <td>{{ carte.actif ? 'Yes' : 'No' }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+{{include('admin/carte/_btn_index.html.twig')}}
+{{include('admin/carte/_btn_edit.html.twig')}}
+{{include('admin/carte/_btn_supprimer.html.twig') }}
+{% endblock %}

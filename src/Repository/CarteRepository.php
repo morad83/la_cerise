@@ -2,30 +2,30 @@
 
 namespace App\Repository;
 
-use App\Entity\Bien;
+use App\Entity\Carte;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Bien|null find($id, $lockMode = null, $lockVersion = null)
- * @method Bien|null findOneBy(array $criteria, array $orderBy = null)
- * @method Bien[]    findAll()
- * @method Bien[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Carte|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Carte|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Carte[]    findAll()
+ * @method Carte[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class BienRepository extends ServiceEntityRepository
+class CarteRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Bien::class);
+        parent::__construct($registry, Carte::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(Bien $entity, bool $flush = true): void
+    public function add(Carte $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -37,7 +37,7 @@ class BienRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(Bien $entity, bool $flush = true): void
+    public function remove(Carte $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -46,15 +46,15 @@ class BienRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Bien[] Returns an array of Bien objects
+    //  * @return Carte[] Returns an array of Carte objects
     //  */
     /*
     public function findByExampleField($value)
     {
-        return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.exampleField = :val')
             ->setParameter('val', $value)
-            ->orderBy('b.id', 'ASC')
+            ->orderBy('c.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
@@ -63,10 +63,10 @@ class BienRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Bien
+    public function findOneBySomeField($value): ?Carte
     {
-        return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
+        return $this->createQueryBuilder('c')
+            ->andWhere('c.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()
