@@ -1,0 +1,83 @@
+{% extends 'bases/carte_base.html.twig' %}
+
+{% block title %}Carte fixe{% endblock %}
+
+{% block section %}
+    <section id="ShowCarteFixe">
+        <div>
+            <h1>Carte fixe</h1>
+        </div>
+        <div>
+            <p>Spécialisé dans la livraison à domicile,
+                "La cerise" vous propose chaque semaine 3 salades,
+                3 plats et 3 desserts différents ainsi que des brunchs et des plateaux d'appérnitifs,
+                toujours dans le thème du voyage et de la gourmandise.
+                Commandez et soyez livré aussi bien de chez vous que depuis votre lieu de travail par exemple.
+            </p>
+        </div>
+
+        <section class="listeProduitsCarteFixe">
+
+            <section>
+                <h1>Salades</h1>
+
+                <section class="lignesProduit">
+                    {% for produit in produits if {{ produit.categorie }} == salade %}
+
+                    <article class="ligneProduit">
+                        <div>
+                            <h1>{{ produit.nom }}</h1>
+                        </div>
+                        <div>
+                            <span>{{ produit.description }}</span>
+                        </div>
+                        <div>
+                            <span>{{ produit.prix }}</span>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </section>
+            </section>
+
+            <section>
+                <h1>Plats</h1>
+                <section class="lignesProduit">
+                    {% for produit in produits if {{ produit.categorie }} == plat %}
+                            <article class="ligneProduit">
+                                <div>
+                                    <h1>{{ produit.nom }}</h1>
+                                </div>
+                                <div>
+                                    <span>{{ produit.description }}</span>
+                                </div>
+                                <div>
+                                    <span>{{ produit.prix }}</span>
+                                </div>
+                            </article>
+                    {% endfor %}
+                </section>
+            </section>
+
+            <section>
+                <h1>Desserts</h1>
+                <section class="lignesProduit">
+                    {% for produit in produits if {{ produit.categorie }} == dessert %}
+                            <article class="ligneProduit">
+                                <div>
+                                    <h1>{{ produit.nom }}</h1>
+                                </div>
+                                <div>
+                                    <span>{{ produit.description }}</span>
+                                </div>
+                                <div>
+                                    <span>{{ produit.prix }}</span>
+                                </div>
+                            </article>
+                    {% endfor %}
+                </section>
+            </section>
+
+        </section>
+{{ include('carte/btn/_btn_show.html.twig') }}
+    </section>
+{% endblock %}

@@ -1,8 +1,8 @@
 {% extends 'home_base.html.twig' %}
 
 {% block section %}
-<section id="HomeAccueil">
-    <section id="indexResume">
+<section id="homeAccueil">
+    <section id="homeAccueilResume">
         <div>
             <h1>La Cerise...</h1>
         </div>
@@ -16,8 +16,8 @@
             </p>
         </div>
     </section>
-    <section id="indexNav">
-        <section id="indexBien" class="index">
+    <section id="homeAccueilNav">
+        <section id="homeAccueilNavCarte" class="carte resume">
             <div>
                 <h1>La Cerise - Cuisine du monde</h1>
             </div>
@@ -25,11 +25,11 @@
                 <span>Vente à emporter et livraison à domicile</span>
             </div>
             <button>
-                <a href="">Lien</a>
+                <a href="{{ path('') }}">Lien</a>
             </button>
         </section>
 
-        <section id="indexService" class="index">
+        <section id="homeAccueilNavService" class="service resume">
             <div>
                 <h1>La Cerise - Events</h1>
             </div>
@@ -41,7 +41,7 @@
             </button>
         </section>
 
-        <section id="indexMedia" class="index">
+        <section id="homeAccueilNavMedia" class="media resume">
             <div>
                 <h1>La Cerise - Sur le gateau</h1>
             </div>
@@ -52,9 +52,6 @@
                 <a href="">Lien</a>
             </button>
         </section>
-
-
-
     </section>
 </section>
 {% endblock %}

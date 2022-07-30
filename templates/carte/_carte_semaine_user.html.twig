@@ -1,0 +1,15 @@
+    <section class="listeProduitsCarteFixe">
+        {% for produit in produits %}
+        <section class="ligneProduit">
+        <div>
+            <h1>{{ produit.nom }}</h1>
+        </div>
+        <div>
+            <span>{{ produit.description }}</span>
+        </div>
+        <div>
+            <span>{{ produit.prix }}</span>
+        </div>
+
+        {% endfor %}
+    </section>
